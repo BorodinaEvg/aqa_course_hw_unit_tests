@@ -10,10 +10,10 @@ function isPalindrom(word) {
   } else if (typeof word !== "string"){
     return false
   }
-    
+     
 }
 
-isPalindrom("шалрораш")
+console.log(isPalindrom(123))
 
 /*
  2. findLongestWords()
@@ -26,16 +26,18 @@ function findLongestWords(sentence) {
   
   if (typeof sentence !== 'string' || sentence === "") return []
   const new_strings = sentence.split(" ") // Рабиваем строку на массив строк 
-  console.log(new_strings)
+  //console.log(new_strings)
 
   let longest_word = ""
-  const list_word = []
+  let list_word;
     
   for (const item of new_strings) {
     if (item.length > longest_word.length) {
       longest_word = item // присваиваем значение
-      list_word.length = 0 // обнуляем массив, если нашли слово длиннее
-      list_word.push(item) // добавляем в массив новое значение
+      list_word = [item]
+      //list_word.length = 0 // обнуляем массив, если нашли слово длиннее
+      //list_word.push(item) // добавляем в массив новое значение
+      
       } else if (item.length == longest_word.length) {
         list_word.push(item) }
        }
@@ -44,6 +46,6 @@ function findLongestWords(sentence) {
 }
   
 
-console.log(findLongestWords (""))
+console.log(findLongestWords ("Пожар лес пожар"))
 
 export { isPalindrom, findLongestWords };

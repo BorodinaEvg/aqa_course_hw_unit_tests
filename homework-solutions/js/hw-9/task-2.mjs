@@ -14,23 +14,43 @@ const characters = [
 ];
 
 function addCharacter(character) {
-  // Ваш код
+  if (!["name", "age"].every(key=> key in character)) throw new Error ("invalid key");
+  return characters.push({name: character.name, age: character.age})
 }
+
+//addCharacter(characters)
+//console.log(characters)
 
 function getCharacter(name) {
-  // Ваш код
+return characters.find(el=> el.name === name)
 }
+
+//console.log(getCharacter('Fred'))
 
 function getCharactersByAge(minAge) {
-  // Ваш код
+  if(typeof minAge != 'number') throw new Error ("invalid type of minAge");
+  return characters.filter(el => el.age >= minAge)
 }
+//console.log(getCharactersByAge(40))
+
 
 function updateCharacter(name, newCharacter) {
-  // Ваш код
+const get_character = getCharacter(name)
+if (!get_character) throw new Error(`Name "${name}" not found`);
+Object.assign(get_character, newCharacter);
+return characters;
+
+
 }
 
+
 function removeCharacter(name) {
-  // Ваш код
+  const index = characters.findIndex((el)=> el.name === name);
+  if (index === -1) throw new Error(`Name "${name}" not found`);
+  characters.splice(index, 1);
+  return characters;
+  
+
 }
 
 export { characters, addCharacter, updateCharacter, getCharacter, getCharactersByAge, removeCharacter };

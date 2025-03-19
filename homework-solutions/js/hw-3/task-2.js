@@ -4,3 +4,11 @@
 n + nn + nnn, где n не перемножаются, а конкатенируются
 
 */
+
+const num1to9 = '1'
+const n = +num1to9
+console.log(n)
+
+const summaN = n + +('' + n + n) + +('' + n + n + n); // складываем, преобразуя значения в переменных
+console.log(summaN); 
+

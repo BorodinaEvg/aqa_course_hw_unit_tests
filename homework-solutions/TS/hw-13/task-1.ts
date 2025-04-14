@@ -12,8 +12,8 @@ let num: number = 42;
 let str: string = "Hello, TypeScript!";
 let isComplete: boolean = true;
 let numbers: number[] = [1, 2, 3, 4, 5];
-let cities: Array<string> = ["Minsk", "Warsaw", "London"];
-let person: {name: string, age: number, city: string}  = {
+const cities: Array<string> = ["Minsk", "Warsaw", "London"];
+const person: {name: string, age: number, city: string}  = {
     name: "Alice", 
     age: 30, 
     city: "Minsk"

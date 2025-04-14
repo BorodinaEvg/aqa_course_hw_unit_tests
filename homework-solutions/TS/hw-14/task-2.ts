@@ -8,7 +8,7 @@
    map([1,2,3,4,5], callback) => [0,2,6,12,20]
 */
 
-function map1<T, U>(arr: T[], callback:(element:T, index:number, arr: T[]) => U ){
+function map<T, U>(arr: T[], callback:(element:T, index:number, arr: T[]) => U ){
     const newmap:U[] = []
     for (let i = 0; i < arr.length; i++) {
         newmap.push(callback(arr[i], i, arr));
@@ -19,4 +19,4 @@ function map1<T, U>(arr: T[], callback:(element:T, index:number, arr: T[]) => U 
 }
 
 
-
+console.log(map([1,2,3,4,5], (element, index) => element * index))
